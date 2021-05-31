@@ -1,0 +1,7 @@
+C:\Users\dogukan\source\repos\XMLApplication\XMLApplication\bin\Debug\XMLApplication.exe.config
+C:\Users\dogukan\source\repos\XMLApplication\XMLApplication\bin\Debug\XMLApplication.exe
+C:\Users\dogukan\source\repos\XMLApplication\XMLApplication\bin\Debug\XMLApplication.pdb
+C:\Users\dogukan\source\repos\XMLApplication\XMLApplication\obj\Debug\XMLApplication.csprojAssemblyReference.cache
+C:\Users\dogukan\source\repos\XMLApplication\XMLApplication\obj\Debug\XMLApplication.csproj.CoreCompileInputs.cache
+C:\Users\dogukan\source\repos\XMLApplication\XMLApplication\obj\Debug\XMLApplication.exe
+C:\Users\dogukan\source\repos\XMLApplication\XMLApplication\obj\Debug\XMLApplication.pdb
