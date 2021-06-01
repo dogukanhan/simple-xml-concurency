@@ -45,25 +45,20 @@ namespace XMLApplication
                 Console.Write("Input: ");
                 string line = Console.ReadLine();
                
-                if(line == "-1")
-                    break;
-                else if(line == "-h"){
-                    HelpMenu();
-                }
-                else if(line == "-l"){
-                    ListCurrencies(false);
-                }else if( line == "-ld"){
-                    ListCurrencies(true);
-                }else if(line == "-b"){
-                    CurrencyOperation(true);
-                }else if (line == "-s")
+                if(line == CMDOptions.EXIT)
                 {
-                    CurrencyOperation(false);
-                }else if (line == "-r"){
-                    currencies = cacheManager.RefleshCache();
+                    break;
                 }
                 else{
-                    Console.WriteLine("Unknown command");
+                    switch(line){
+                        case CMDOptions.HELP: HelpMenu(); break;
+                        case CMDOptions.LIST_CURRENCIES : ListCurrencies(false); break;
+                        case CMDOptions.LIST_CURRENCIES_DETAILED : ListCurrencies(true); break;
+                        case CMDOptions.BUY_CURRENCY : CurrencyOperation(true);break;
+                        case CMDOptions.SELL_CURRENCY : CurrencyOperation(false); break;
+                        case CMDOptions.REFLESH_CACHE : cacheManager.RefleshCache(); break;
+                        default: Console.WriteLine("Unknown Command"); break;
+                    }
                 }
             }
            

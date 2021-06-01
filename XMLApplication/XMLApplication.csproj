@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CacheManager.cs" />
+    <Compile Include="CMDOptions.cs" />
     <Compile Include="currency\Currency.cs" />
     <Compile Include="currency\ICurrency.cs" />
     <Compile Include="payment\BanknotePayment.cs" />
