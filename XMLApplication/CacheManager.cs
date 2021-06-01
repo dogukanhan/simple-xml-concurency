@@ -5,11 +5,14 @@ using System.Net;
 
 namespace XMLApplication
 {
+    // CacheManager provides an interface for string data.xml and refleshing it if the data is old.
     class CacheManager
     {
         const string DOWNLOAD_URL = "https://www.tcmb.gov.tr/kurlar/today.xml";
         const string CACHE_FOLDER = "./";
         const string CACHE_FILE_NAME = ".cached.xml";
+
+        // Reflesh cache if the data is not valid or user requested.
         public SortedDictionary<string, ICurrency> RefleshCache()
         {
             Console.WriteLine("Reflesh Cache");
@@ -23,10 +26,13 @@ namespace XMLApplication
             }
         }
 
+        // Load data from reading cache file.
         SortedDictionary<string, ICurrency> LoadFromCache()
         {
             return ConcurrencyParser.Parse(CachedFilePath());
         }
+
+        // Load data retreives cache file it valid or refleshes cache and retrieves fresh data.
         public SortedDictionary<string, ICurrency> LoadData()
         {
             if (File.Exists(CachedFilePath()))
@@ -65,6 +71,7 @@ namespace XMLApplication
             }
         }
 
+        // Cachedfilepath.
         string CachedFilePath()
         {
             return CACHE_FOLDER + CACHE_FILE_NAME;

@@ -1,5 +1,6 @@
 ﻿namespace XMLApplication
 {
+    // All information can be retrevied from xml data.
     public class Currency : ICurrency
     {
         public int CrossOrder { get; }

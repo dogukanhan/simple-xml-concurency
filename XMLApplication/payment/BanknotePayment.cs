@@ -1,5 +1,6 @@
 ﻿namespace XMLApplication
 {
+    // Banknote payment implementations.
     class BanknotePayment : IPayment
     {
         public decimal Buy(ICurrency source, ICurrency target, decimal amount)

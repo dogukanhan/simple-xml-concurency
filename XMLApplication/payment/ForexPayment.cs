@@ -1,5 +1,6 @@
 ﻿namespace XMLApplication
 {
+    // Forex Payment implementation
     class ForexPayment : IPayment
     {
         public decimal Buy(ICurrency source, ICurrency target, decimal amount)

@@ -4,14 +4,15 @@ using System.Xml;
 
 namespace XMLApplication
 {
+    // This class converts the given xml to data strutucture.
     public static class ConcurrencyParser
     {
-        internal static SortedDictionary<string, ICurrency> Parse(string fileName)
+        internal static SortedDictionary<string, ICurrency> Parse(string filePath)
         {
             SortedDictionary<string,ICurrency> sortedDictionary = new SortedDictionary<string, ICurrency>();
 
             XmlDocument xd = new XmlDocument();
-            xd.Load(fileName);
+            xd.Load(filePath);
 
             XmlNodeList nodelist = xd.SelectSingleNode("/Tarih_Date").ChildNodes;
             foreach (XmlNode node in nodelist) 

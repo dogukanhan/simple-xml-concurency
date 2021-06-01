@@ -1,5 +1,6 @@
 ﻿namespace XMLApplication
 {
+    // Only this data is required for running appplication. Any implementation is accepted.
     interface ICurrency 
     {
         string Name { get; }
