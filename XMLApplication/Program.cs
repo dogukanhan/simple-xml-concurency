@@ -4,16 +4,23 @@ using System.Collections.Generic;
 
 namespace XMLApplication
 {
-    // Main program for user interactions.
+    /// <summary>
+    /// Main program for user interactions.
+    /// </summary>
     class Program
     {
-        // Concurecy data's stored in this variable.
+
+        /// <summary>
+        /// Concurecy data's stored in this variable.
+        /// </summary>
         private SortedDictionary<string, ICurrency> currencies;
 
-        // Cache manager provides an interface for accesing the data
+        /// <summary>
+        /// Cache manager provides an interface for accesing the data
+        /// </summary>
         private CacheManager cacheManager;
 
-        Program(){
+        private Program(){
             this.cacheManager = new CacheManager();
         }
 
@@ -23,7 +30,9 @@ namespace XMLApplication
             program.MainMenu();
         }
 
-        // MainMenu controls users interactions.
+        /// <summary>
+        /// MainMenu controls users interactions.
+        /// </summary>
         void MainMenu(){
             Console.WriteLine("Started");
 
@@ -60,8 +69,11 @@ namespace XMLApplication
            
             Console.WriteLine("Finished");
         }
-    
-        // This method is used for buying or selling a currency.
+
+        /// <summary>
+        /// This method is used for buying or selling a currency. 
+        /// </summary>
+        /// <param name="buy">True if buying, false for selling currency</param>
         void CurrencyOperation(bool buy){ 
             
             // Take source currency.
@@ -155,7 +167,7 @@ namespace XMLApplication
                 Console.WriteLine("Payment value error");
                 return;
             }
-
+         
             // Calculate total output for given variables.
             decimal total;
             if(buy){
@@ -166,7 +178,9 @@ namespace XMLApplication
             Console.WriteLine("Total= " + total);
         }
 
-        // Print help menu to user.
+        /// <summary>
+        /// Print help menu to user.
+        /// </summary>
         void HelpMenu(){
             Console.WriteLine("-b : buy");
             Console.WriteLine("-h : to help");
@@ -178,7 +192,10 @@ namespace XMLApplication
 
         }
 
-        // Print Currencies and details if detailed is true.
+        /// <summary>
+        /// Print Currencies and details if detailed is true.
+        /// </summary>
+        /// <param name="detailed">Print detailed values if true</param>
         void ListCurrencies(bool detailed){
             Console.WriteLine("Code | TR | Name");
             foreach (KeyValuePair<string, ICurrency> entry in currencies)

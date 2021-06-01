@@ -4,9 +4,17 @@ using System.Xml;
 
 namespace XMLApplication
 {
-    // This class converts the given xml to data strutucture.
+
+    /// <summary>
+    /// This class converts the given xml to data strutucture.
+    /// </summary>
     public static class ConcurrencyParser
     {
+        /// <summary>
+        /// Convert given xml to currency data structure.
+        /// </summary>
+        /// <param name="filePath">XML data's filePath</param>
+        /// <returns>SortedDictionary where key is the code of the currency, value is the ICurrency parsed from xml</returns>
         internal static SortedDictionary<string, ICurrency> Parse(string filePath)
         {
             SortedDictionary<string,ICurrency> sortedDictionary = new SortedDictionary<string, ICurrency>();

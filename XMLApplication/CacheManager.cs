@@ -5,14 +5,31 @@ using System.Net;
 
 namespace XMLApplication
 {
-    // CacheManager provides an interface for string data.xml and refleshing it if the data is old.
+    /// <summary>
+    /// CacheManager provides an interface for string data.xml and refleshing it if the data is old.
+    /// </summary>
     class CacheManager
     {
+
+        /// <summary>
+        /// Download URL for xml data.
+        /// </summary>
         const string DOWNLOAD_URL = "https://www.tcmb.gov.tr/kurlar/today.xml";
+
+        /// <summary>
+        /// Cache folder will be used to store xml
+        /// </summary>
         const string CACHE_FOLDER = "./";
+
+        /// <summary>
+        /// Cache file name wil be used to store xml
+        /// </summary>
         const string CACHE_FILE_NAME = ".cached.xml";
 
-        // Reflesh cache if the data is not valid or user requested.
+        /// <summary>
+        /// Reflesh cache if the data is not valid or user requested.
+        /// </summary>
+        /// <returns>Fresh data parsed with using <see cref="ConcurrencyParser"/> class</returns>
         public SortedDictionary<string, ICurrency> RefleshCache()
         {
             Console.WriteLine("Reflesh Cache");
@@ -26,13 +43,19 @@ namespace XMLApplication
             }
         }
 
-        // Load data from reading cache file.
+        /// <summary>
+        /// Load data from reading cache file
+        /// </summary>
+        /// <returns>Parsed xml data from cache file.</returns>
         SortedDictionary<string, ICurrency> LoadFromCache()
         {
             return ConcurrencyParser.Parse(CachedFilePath());
         }
 
-        // Load data retreives cache file it valid or refleshes cache and retrieves fresh data.
+        /// <summary>
+        /// Load data retreives cache file it valid or refleshes cache and retrieves fresh data.
+        /// </summary>
+        /// <returns></returns>
         public SortedDictionary<string, ICurrency> LoadData()
         {
             if (File.Exists(CachedFilePath()))
